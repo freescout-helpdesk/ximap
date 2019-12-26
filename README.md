@@ -3,12 +3,12 @@ Wrapper around [Zend Mail](https://github.com/zendframework/zend-mail) providing
 
 ## Usage
 
-You can functions:
+You can use functions:
 ```
-imap_open("{mail.example.com:143}", "sample@example.com","password");
+ximap_open("{mail.example.com:143}", "sample@example.com","password");
 ```
 
-Or you can use `Ximap::Imap` class:
+Or you can use `Ximap\Imap` class:
 
 ```
 $ximap = Ximap\Imap("{mail.example.com:143}", "sample@example.com","password");
