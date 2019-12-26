@@ -4,7 +4,7 @@ Wrapper around [Zend Mail](https://github.com/zendframework/zend-mail) providing
 ## Usage
 
 You can use functions:
-```
+```php
 $imap = ximap_open("{imap.example.org}", "sample@example.com","password");
 
 $list = ximap_list($imap, "{imap.example.org}", "*");
@@ -22,6 +22,17 @@ ximap_close($imap);
 
 Or you can use `Ximap\Imap` class:
 
-```
+```php
 $ximap = Ximap\Imap("{mail.example.com:143}", "sample@example.com","password");
+
+$list = $ximap->imap_list();
+if (is_array($list)) {
+    foreach ($list as $val) {
+        echo $ximap->imap_utf7_decode($val) . "\n";
+    }
+} else {
+    echo "imap_list failed: " . $ximap->imap_last_error() . "\n";
+}
+
+$ximap->ximap_close($imap);
 ```
