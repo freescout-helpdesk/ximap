@@ -1,0 +1,22 @@
+{
+    "name": "freescout-helpdesk/ximap",
+    "type": "library",
+    "description": "PHP IMAP replacemet with XOAUTH2 support",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "The FreeScout Team",
+            "email": "support@freescout.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "zendframework/zend-mail": "2.10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xiamp\\": "src/Ximap"
+        },
+        "files": ["src/functions.php"]
+    }
+}
