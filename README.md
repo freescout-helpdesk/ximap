@@ -5,7 +5,19 @@ Wrapper around [Zend Mail](https://github.com/zendframework/zend-mail) providing
 
 You can use functions:
 ```
-ximap_open("{mail.example.com:143}", "sample@example.com","password");
+$imap = ximap_open("{imap.example.org}", "sample@example.com","password");
+
+$list = ximap_list($imap, "{imap.example.org}", "*");
+if (is_array($list)) {
+    foreach ($list as $val) {
+        echo ximap_utf7_decode($val) . "\n";
+    }
+} else {
+    echo "imap_list failed: " . ximap_last_error() . "\n";
+}
+
+ximap_close($imap);
+
 ```
 
 Or you can use `Ximap\Imap` class:
