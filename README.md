@@ -34,5 +34,5 @@ if (is_array($list)) {
     echo "imap_list failed: " . $ximap->imap_last_error() . "\n";
 }
 
-$ximap->ximap_close($imap);
+$ximap->imap_close($imap);
 ```
